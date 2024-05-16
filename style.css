@@ -1,0 +1,124 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: 0;
+}
+:root {
+  --hue: 194;
+  font-size: 62.5%;
+  --black: hsl(var(--hue), 5%, 7%);
+  --white: hsl(var(--hue), 40%, 98%);
+  --secondary-button-color: hsl(var(--hue), 100%, 63%);
+  --gray: hsl(var(--hue), 0%, 14%);
+  --primary-button-color: hsl(var(--hue), 40%, 98%);
+}
+body.dark {
+  --black: hsl(var(--hue), 40%, 98%);
+  --white: hsl(var(--hue), 5%, 7%);
+}
+
+/* HIDE ARROWS FROM INPUT NUMBER  */
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* FLEX ITENS */
+body,
+.container,
+.container .text-container,
+.container .buttons-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body,
+input {
+  font-family: "Roboto", sans-serif;
+}
+body {
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--white);
+  transition: background 0.3s ease;
+}
+
+.container {
+  flex-direction: column;
+}
+.container .text-container {
+  height: 5rem;
+  font-size: 4rem;
+  align-items: center;
+  font-weight: bold;
+  color: var(--black);
+}
+.container .text-container input {
+  background-color: transparent;
+  max-width: 4.7rem;
+  font-size: 4rem;
+  font-weight: bold;
+  color: var(--black);
+}
+
+.container .buttons-container {
+  width: 13rem;
+  padding: 1rem;
+  background-color: var(--gray);
+  gap: 0.5rem;
+  border-radius: 9rem;
+  margin-top: 0.5rem;
+}
+.container .buttons-container button,
+.toggle-mode button{
+  background-color: transparent;  
+  width: 3.2rem;
+  height: 3.2rem;
+  cursor: pointer;
+  font-size: 3rem;
+  text-align: center;
+  color: var(--primary-button-color);
+}
+.container .buttons-container button.secondary {
+  color: var(--secondary-button-color);
+}
+
+.toggle-mode {
+  width: 3rem;
+  height: 3rem;
+  position: absolute;
+  top: 3%;
+  right: 2%;
+  cursor: pointer;
+  font-size: 2.5rem;
+  text-align: center;
+  color: var(--black);
+}
+.toggle-mode button{
+  color: var(--black);
+}
+/* CONTROLS */
+.runing .ph-play-circle,
+.runing .ph-timer,
+.music-on .ph-speaker-none,
+.dark .ph-moon,
+body:not(.runing) .ph-pause-circle,
+body:not(.runing) .ph-stop-circle,
+body:not(.music-on) .ph-speaker-high,
+body:not(.dark) .ph-sun {
+  display: none;
+}
+
+.sr-only {
+  width: 1px;
+  height: 1px;
+  position: absolute;
+  overflow: hidden;
+  margin: -1px;
+  padding: 0px;
+  border: 0;
+  appearance: none;
+}
